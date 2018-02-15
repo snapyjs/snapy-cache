@@ -1,7 +1,7 @@
 {
   "name": "snapy-cache",
   "description": "handles the cache writing to disk",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "homepage": "https://github.com/paulpflug/",
   "author": {
     "name": "Paul Pflugradt",
