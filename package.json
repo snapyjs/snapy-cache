@@ -1,0 +1,44 @@
+{
+  "name": "snapy-cache",
+  "description": "handles the cache writing to disk",
+  "version": "0.0.0",
+  "homepage": "https://github.com/paulpflug/",
+  "author": {
+    "name": "Paul Pflugradt",
+    "email": "paul.pflugradt@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/snapyjs/snapy-cache"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "main": "lib/server.js",
+  "files": [
+    "lib/*.js",
+    "shrinkwrap.yaml"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "coffee-cli": "^0.2.1",
+    "coffee-loader": "^0.9.0",
+    "script-runner": "^0.1.7",
+    "snapy": "^0.1.0",
+    "read-conf": "^0.4.0"
+  },
+  "keywords": [],
+  "readmeFilename": "README.md",
+  "scripts": {
+    "build": "run-npm build:*",
+    "build:server": "coffee-cli --next --bare --no-header --compile --output lib/ src/server.coffee",
+    "doc": "toDoc src/server.coffee",
+    "watch": "run-npm watch:*",
+    "watch:server": "coffee-cli --next --watch --bare --no-header --compile --output lib/ src/server.coffee",
+    "test": "snapy",
+    "preversion": "npm test",
+    "version": "npm run build && git add .",
+    "postversion": "git push && git push --tags && npm publish"
+  }
+}
